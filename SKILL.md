@@ -25,15 +25,22 @@ Keep these separate:
 - Preferences and constraints the student has confirmed.
 - Unknowns that no source or student answer settles.
 
+For each confirmed rule, record what it concerns, whether it is strict or flexible,
+and how the student wants missing information handled when that matters. For example,
+"I cannot relocate" is a strict constraint; "I prefer remote" is a preference. Reuse
+saved rules and later corrections. Do not make a preference a hard exclusion. Do not
+assume students need sponsorship, have a particular work authorization or start date,
+or want a specific location or experience cutoff. Ask one focused question only when
+an unclear rule or answer could change this recommendation.
+
 Do not turn an inference, generic project tag, or job requirement into a student fact.
 Do not claim a skill or work experience from a project title alone. A resume omission
 does not prove the student lacks a qualification.
 
-Ask one simple question at a time. First identify which missing answer could change
-this decision, then ask for that answer. This may be a specific qualification, desired
-role or level, graduation or earliest start, location, or sponsorship, depending on the
-posting. Do not require a full profile before giving a useful summary of the role's
-stated requirements.
+Ask one simple question at a time, only when its answer could change the decision.
+This may be a specific qualification or a detail about a confirmed student rule. Do not
+require a full profile before giving a useful summary of the role's stated requirements.
+Ask about sponsorship only when the student has made it relevant to their own screening.
 
 Ask about a specific project or skill only when the posting leaves a decision-relevant
 gap. Save the student's explicit answer with its source and observed date.
@@ -100,9 +107,17 @@ quotes brief. When the official source is unavailable, screen student-provided t
 provisionally, label it unverified, and do not describe it as official evidence.
 
 Compare requirements with supported facts and confirmed preferences. Keep unknowns
-unknown. Ask about a material unknown only if the answer could change the verdict;
-otherwise name it as unresolved. If the profile is incomplete, still summarize the
-role's general requirements.
+unknown, and do not treat a profile omission as evidence that the student lacks a skill
+or qualification. If the student has set a rule for missing information, follow it. A
+missing salary, update date, application-form detail, sponsorship statement, or start
+date does not by itself make a role unusable. Mention an unknown only when it could
+change the student's decision or effort. Ask about it only if the answer could change
+the recommendation. If the profile is incomplete, still summarize the role's general
+requirements.
+
+When the posting uses broad wishlist or attribute language without saying whether it is
+required, do not invent a hard gate. Explain what the posting says in plain language and
+give a conditional lean when the rest of the evidence supports one.
 
 Use these rules when reading job language:
 
@@ -114,17 +129,20 @@ Use these rules when reading job language:
   Do not infer a separate title such as "II" from the code.
 - Apply seniority, years-of-experience, production, location, start-date, or other
   cutoffs only when the student has chosen that cutoff. Do not add a personal rule.
-- Sponsorship silence is unknown. A stated sponsorship policy does not guarantee this
-  student's eligibility. Do not infer work authorization, OPT approval or start-date
-  compatibility from nationality, degree, or general background-check language. Treat
-  an explicit citizenship or authorization requirement as written, without extending
-  it.
+- Sponsorship silence is unknown. Follow the student's own confirmed rule for handling
+  that silence. If the student says silence should not block the screen, let it pass as
+  a screening choice and do not repeat it as a caveat on every role. This does not show
+  that the employer sponsors or that the student is eligible. Ask about sponsorship
+  only when the student has made it relevant. Do not infer work authorization, OPT
+  approval, or start-date compatibility from nationality, degree, or general
+  background-check language. Treat an explicit citizenship or authorization
+  requirement as written, without extending it.
 
 Keep role fit separate from posting freshness. A manually supplied link has no default
-age cutoff. Apply a posting-age window only if the student confirmed one. Prefer the
-official original publication metadata when available; report any modified date
-separately. If a date is absent, say it is unavailable. Use the student's local current
-date to calculate age and do not invent a timezone.
+age cutoff. Apply a posting-age window only if the student confirmed one. Record
+official publication and update dates when available, but mention them in the reply
+only when they could affect the decision or the student asks. Use the student's local
+current date to calculate age and do not invent a timezone.
 
 ## Save and reuse the student's state
 
@@ -132,14 +150,16 @@ Use Cubbie's memory for confirmed reusable facts and preferences, and keep the
 provenance and review history in the student's private sandbox files:
 
 - ~/.config/worth-applying/profile.json: facts with source and observed date; confirmed
-  preferences with the student's confirmation source and date; unresolved unknowns.
+  rules and preferences with their topic, strict or flexible status, missing-information
+  preference, confirmation source and date; unresolved unknowns.
 - ~/.config/worth-applying/reviews.json: each review's employer, verified role
   identifiers with their namespaces, observed input URLs, canonical official URL,
-  checked date, verdict, and prior check dates.
+  checked date, verdict, and prior check dates. Preserve the decisive source wording,
+  section, and source link in the private review record when available.
 
 Store only details needed for screening. Put no personal values in this public skill.
-Read these files on later reviews. Append or retain prior check dates, but fetch the
-official page fresh every time.
+Read these files on later reviews and preserve existing saved information. Append or
+retain prior check dates, but fetch the official page fresh every time.
 
 Match a prior review only on an exact employer plus a verified, namespaced role
 identifier. A title alone is not enough, and distinct requisitions stay distinct.
@@ -161,25 +181,32 @@ report a change only after it succeeds.
 
 ## Give the verdict
 
-Apply these verdict rules in order:
+Choose one verdict:
 
-1. Choose Not a fit when a confirmed student constraint conflicts with the role, or
-   the official job page confirms the vacancy is closed. State which reason applies.
-2. Otherwise, choose Need to check when the exact role cannot be verified or a
-   material unknown could change the decision. Name the unknown.
-3. Otherwise, choose Worth considering. Mention any known lesser gaps. The absence of
-   a known conflict alone is not enough for a confident fit recommendation.
+- **Worth applying** when the evidence supports spending time on the role and no known
+  hard student rule conflicts. This does not promise eligibility or an offer.
+- **Not worth applying** when a confirmed relevant hard rule conflicts with the role or
+  the official page confirms the vacancy is closed.
+- **Lean worth applying** or **Lean not worth applying** when the evidence supports a
+  useful recommendation despite a material unknown. State the deciding assumption or
+  caveat in plain language.
+- **Can't reliably assess** when the exact source or its content cannot be retrieved,
+  or the available evidence is too thin to support a recommendation. Give a conditional
+  lean only when the evidence supports it.
 
-Do not use a match percentage or give an unsupported confident recommendation to
-apply. State the strongest reasons, any unresolved blocker, and date provenance.
-Distinguish original publication from later updates and the date checked. Link the
-official role on its own line.
+Do not use percentages or force a verdict from missing information. A routine unknown
+is not by itself a reason to choose "Can't reliably assess." Name only the strongest
+decision-changing caveat by default, and ask at most one question when its answer could
+change the recommendation. Link the official role on its own line.
 
 ## Replies
 
-Keep each reply short, plain text, and useful on a phone. Lead with the verdict. Use
-no headings, tables, or Markdown formatting. Give the strongest evidence and any
-important unknown in a few lines, then put the official link on its own line. If the
-profile is incomplete, give the general requirements before asking one
-decision-relevant question. Do not share the student's information with an employer
-or another third party.
+Start the first substantive reply with the verdict and a brief role identity. Aim for
+60-90 words, excluding the source link. Give one or two concrete reasons and, when
+useful, the strongest caveat that could change the decision. End with at most one
+useful question, only if its answer could change the recommendation. Do not put a
+preamble or metadata report before the verdict. Keep full quotes, section names, dates,
+check history, role identifiers, and form-document checklists in the private review
+record or provide them when asked. Translate hiring-system terms into plain language.
+Use short plain text without headings or tables, then put the official link on its own
+line. Do not share the student's information with an employer or another third party.
