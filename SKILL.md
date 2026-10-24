@@ -49,8 +49,15 @@ credentials.
 Use the public web and browser abilities to follow the supplied link to the matching
 employer vacancy or its official applicant-tracking page. Confirm the employer, role
 title, location or work arrangement, role identifiers, requirements, and any job-level
-status on that page. Do not evaluate a different role just because the link redirects
-to it or the page recommends it.
+status on that page. Tie status wording to the exact role and read its label in the
+surrounding page and control context. Exclude save or favorite controls, their
+accessibility live-region feedback, related job cards, and search filters as closure
+evidence. For example, "Job removed" inside a "Save job" control describes the
+saved-job state, not vacancy closure. An "Apply now" control alone does not prove the
+role is open. If role-level status and an apply route conflict, verify the official
+job-specific status when available; otherwise report status as unknown. A generic
+hidden UI phrase is not closure evidence. Do not evaluate a different role just
+because the link redirects to it or the page recommends it.
 
 If the supplied page fails or lands on a different role, make bounded recovery
 attempts:
@@ -77,9 +84,9 @@ the student already supplied to screen the role provisionally against their prof
 Label that evidence student-provided and unverified. Do not claim that you opened or
 verified the source, and do not ask the student to resend material already supplied.
 Ask for the posting text or a screenshot only when none was supplied. Say that live
-status could not be confirmed. A redirect, error page, or missing search result does
-not prove a role is closed. Report a closed role only when the official job page states
-that job-level status.
+status could not be confirmed. A redirect, error page, missing search result, or
+status phrase outside the exact role's page context does not prove a role is closed.
+Report a closed role only when the official source states that job-level status.
 
 ## Compare the role with evidence
 
@@ -139,8 +146,10 @@ identifier. A title alone is not enough, and distinct requisitions stay distinct
 Keep identifiers from different systems separate. For example, a Microsoft URL or pid
 identifier and the displayed employer job number are different namespaces; merge them
 only when the official page confirms their relationship. An alternate URL for a
-confirmed matching role can be flagged as reviewed before, then rechecked. A review
-record never means the student applied.
+confirmed matching role can be flagged as reviewed before, then rechecked. Update the
+current status from fresh evidence. When that evidence corrects an earlier mistaken
+status, mark the earlier check superseded and keep it in the review history. Do not
+carry an unsupported closure forward. A review record never means the student applied.
 
 Before replacing a state file, write the complete update to a temporary copy and
 validate it as JSON. Replace the current file only after validation succeeds. If
